@@ -30,11 +30,11 @@
 
 ### typescript
 - [ ] DOM interactivity and query selectors for:
-  -  [ ] new task button
+  -  [x] new task button
   - [ ] task deletion
-  - [ ] new quote generation (with button)
+  - [x] new quote generation (with button)
   - [ ] new image gen based on time of day
 - [ ] function that takes info input into task creation field and will create a new div containing that information
 - [ ] function that will delete and or hide tasks once button has been pressed
-- [ ] function that checks time of day on page load
+- [x] function that checks time of day on page load
 - [ ] function that calls api to generate new quote on page load / on button press
