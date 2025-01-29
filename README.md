@@ -9,7 +9,7 @@
 
 ## Functionality
 - [x] Add new todos 
-- [ ] Delete (complete) todos
+- [x] Delete (complete) todos
 - [x] Greeting on the page based on the time of the day (morning, afternoon, evening etc)
 - [x] Welcome message or random fact (or other) generated from an API call
 
@@ -29,12 +29,12 @@
 - [x] header styled with a block colour going across top of page
 
 ### typescript
-- [ ] DOM interactivity and query selectors for:
+- [x] DOM interactivity and query selectors for:
   -  [x] new task button
-  - [ ] task deletion
+  - [x] task completion
   - [x] new quote generation (with button)
   - [x] new header text based on time of day
 - [x] function that takes info input into task creation field and will create a new div containing that information
-- [ ] function that will delete and or hide tasks once button has been pressed
+- [x] function that will delete and or hide tasks once button has been pressed
 - [x] function that checks time of day on page load
 - [x] function that calls api to generate new quote on page load / on button press

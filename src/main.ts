@@ -6,8 +6,9 @@ const quoteBtn = document.querySelector<HTMLButtonElement>("#factBtn");
 const userInput = document.querySelector<HTMLInputElement>("#taskInput");
 const submitBtn = document.querySelector<HTMLButtonElement>("#submitBtn");
 const taskList = document.querySelector<HTMLDivElement>(".todo-created__list");
+const timeImg = document.querySelector<HTMLImageElement>("#timeImg");
 
-if(!greeting || !quoteText || !quoteBtn ||!userInput || !submitBtn || !taskList){
+if(!greeting || !quoteText || !quoteBtn ||!userInput || !submitBtn || !taskList || !timeImg){
     throw new Error ("Some elements are missing");
 }
 
@@ -20,14 +21,16 @@ const minutes = date.getMinutes()
 const hour = date.getHours()
 
 
-
 const timeOfDay = () =>{
     if(hour < 12){
-        greeting.innerText=`Good morning! The time is ${hour}:${minutes}! Let's prepare for the day ahead.`;
+        greeting.innerText=`Good morning! The time is ${hour}:${String(minutes).padStart(2,"0")}! Let's prepare for the day ahead.`;
+        timeImg.src="./sunrise.svg";
     } else if(hour < 18){
-        greeting.innerText=`Good afternoon! The time is ${hour}:${minutes}! Keep up the great work today!`;
+        greeting.innerText=`Good afternoon! The time is ${hour}:${String(minutes).padStart(2,"0")}! Keep up the great work today!`;
+        timeImg.src="./sunset.svg";
     } else {
-        greeting.innerText=`Good evening! The time is ${hour}:${minutes}! Time to unwind and relax.`;
+        greeting.innerText=`Good evening! The time is ${hour}:${String(minutes).padStart(2,"0")}! Time to unwind and relax.`;
+        timeImg.src="./evening.svg";
     }
 }
 
@@ -81,9 +84,24 @@ const addNewTask = () => {
 
     userInput.value = "";
     // userInput.placeholder = "Type new task here...";
+};
 
+
+// function that will add a line through completed tasks
+
+const finishTask = (event: Event) => {
+    const target = event.target as HTMLInputElement;
+    if (target.matches(".todo-created__task__checkbox")) {
+        const taskText = target.nextElementSibling as HTMLParagraphElement;
+        taskText.classList.toggle("checked");
+    }
 };
 
 // event listener
 quoteBtn.addEventListener("click", fetchApi);
 submitBtn.addEventListener("click", addNewTask);
+userInput.addEventListener("keypress",(enter) =>{
+    if(enter.key == "Enter") submitBtn.click();
+})
+taskList.addEventListener("change", finishTask);
+
