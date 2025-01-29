@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
     <script type="module" src="/src/main.ts"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
   </head>
   <body>
 
     <header class="page-top">
       <div class="page-top__colour">
-        <div class="page-top__message"></div>
+        <div class="page-top__message">
+          <p class="page-top__message__text">This will be the user greeting! Hello Good morning Etc</p>
+        </div>
         <div class="page-top__image">
           <img src="" alt="">
         </div>
@@ -18,31 +23,39 @@
     </header>
 
     <div class="fact-container">
-      <div class="fact-container__gen">
-        <p id="facttext"></p>
-      </div>
-      <div class="fact-container__button">
-        <button id="genFact">New fact!</button>
+      <div class="fact-container__box">
+        <div class="fact-container__text">
+          <p id="factText"><i>"Your generated will be placed here. Awaiting API call"</i>- <strong>Karl Campbell 2025</strong></p>
+        </div>
+        <div class="fact-container__button">
+          <button id="factBtn">New fact!</button>
+        </div>
       </div>
     </div>
 
     <div class="todo-create">
-      <div class="todo-create__task">
-        <input id="taskInput" type="text" placeholder="Write your task">
-        <input type="date">
+      <div class="todo-create__text">
+        <input id="taskInput" type="text" placeholder="Type new task here...">
+      </div>
+      <div class="todo-create__btn">
         <button>Submit Task</button>
       </div>
     </div>
 
     <div class="todo-created">
-      <div id="example">
-        <div class="todo-created__task">
-          <input type="checkbox" class="task__checkbox">
-          <p class="task__text"></p>
-          <p class="task__date"></p>
+      <div class="todo-created__title">
+        <h1>Current Tasks</h1>  
+      </div>
+      <div class="todo-created__list">
+        <div id="example">
+          <div class="todo-created__task">
+            <input type="checkbox" class="todo-created__task__checkbox">
+            <p class="todo-created__task__text">This is an example of a task</p>
+          </div>
         </div>
       </div>
+
     </div>
-    
+
   </body>
 </html>

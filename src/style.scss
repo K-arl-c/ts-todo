@@ -22,13 +22,7 @@
 //   color: #535bf2;
 // }
 
-// body {
-//   margin: 0;
-//   display: flex;
-//   place-items: center;
-//   min-width: 320px;
-//   min-height: 100vh;
-// }
+
 
 // h1 {
 //   font-size: 3.2em;
@@ -63,22 +57,126 @@
 //   color: #888;
 // }
 
-// button {
-//   border-radius: 8px;
-//   border: 1px solid transparent;
-//   padding: 0.6em 1.2em;
-//   font-size: 1em;
-//   font-weight: 500;
-//   font-family: inherit;
-//   background-color: #1a1a1a;
-//   cursor: pointer;
-//   transition: border-color 0.25s;
-// }
-// button:hover {
-//   border-color: #646cff;
-// }
-// button:focus,
-// button:focus-visible {
-//   outline: 4px auto -webkit-focus-ring-color;
-// }
 
+
+// TODO FIND FONT FOR WHOLE PAGE - USE QUICKSAND FOR QUOTE ONLY
+*{ 
+  font-family: Quicksand;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #1d2d44;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.page-top{
+  margin-bottom: 20px;
+  height: 10vh;
+  min-height: 60px;
+  max-height: 70px;
+
+  &__colour{
+    height: 100%;
+    margin: 0px;
+    background-color: #1d2d44;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+  }
+
+  &__message{
+    font-size: 28px;
+
+    &__text{
+      color:#F0EBD8;
+    }
+  }
+
+}
+
+.fact-container{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__box{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 7px;
+    padding: 20px;
+  }
+
+  &__text{
+    margin-bottom: 16px;
+    font-size: 28px;
+  }
+}
+
+.todo-create{
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-right: 40px;
+
+  &__text{
+    height: 50%;
+  }
+
+  &__btn{
+    // text-align: end;
+  }
+}
+
+
+#taskInput{
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 38px;
+}
+
+.todo-created{
+  margin-left: 40px;
+  margin-right: 40px;
+
+  &__title{
+    margin-bottom: 20px;
+  }
+
+  &__task{
+    display: flex;
+    font-size: 20px;
+
+    &__checkbox{
+      margin-right: 16px;
+    }
+  }
+}

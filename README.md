@@ -1,8 +1,8 @@
 # Tech Test/Take Home (4 hours timeboxed - e.g. 10-3 with 1 hour for lunch)
  
 ## A Todo list created using 
-- [ ] HTML
-- [ ] SCSS (BEM!)
+- [x] HTML
+- [x] SCSS (BEM!)
 - [ ] TS
 
 
@@ -20,15 +20,13 @@
  - [x] Div to create a new todo
  - [x] Div containing all created todo's
    - [x] include button for deletion / completion
-   - [x] include time / due date
    - [x] include task
 
 ### SCSS
-- [ ] Minimalistic style (Pastel colouring?)
-- [ ] Random fact to have seperate styling (larger?) from greeting
-- [ ] create todo to have opposite? styling to created todos
-- [ ] differentiation of each todo
-- [ ] header styled with a block colour going across top of page
+- [x] Minimalistic style
+- [x] Random fact to have seperate styling (larger?) from greeting
+- [x] styling to differentiate created to do from current tasks
+- [x] header styled with a block colour going across top of page
 
 ### typescript
 - [ ] DOM interactivity and query selectors for:
