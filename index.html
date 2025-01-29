@@ -4,9 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
+    <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+
+    <header class="page-top">
+      <div class="page-top__colour">
+        <div class="page-top__message"></div>
+        <div class="page-top__image">
+          <img src="" alt="">
+        </div>
+      </div>
+    </header>
+
+    <div class="fact-container">
+      <div class="fact-container__gen">
+        <p id="facttext"></p>
+      </div>
+      <div class="fact-container__button">
+        <button id="genFact">New fact!</button>
+      </div>
+    </div>
+
+    <div class="todo-create">
+      <div class="todo-create__task">
+        <input id="taskInput" type="text" placeholder="Write your task">
+        <input type="date">
+        <button>Submit Task</button>
+      </div>
+    </div>
+
+    <div class="todo-created">
+      <div id="example">
+        <div class="todo-created__task">
+          <input type="checkbox" class="task__checkbox">
+          <p class="task__text"></p>
+          <p class="task__date"></p>
+        </div>
+      </div>
+    </div>
+    
   </body>
 </html>
