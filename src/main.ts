@@ -5,8 +5,9 @@ const quoteText = document.querySelector<HTMLParagraphElement>("#factText");
 const quoteBtn = document.querySelector<HTMLButtonElement>("#factBtn");
 const userInput = document.querySelector<HTMLInputElement>("#taskInput");
 const submitBtn = document.querySelector<HTMLButtonElement>("#submitBtn");
+const taskList = document.querySelector<HTMLDivElement>(".todo-created__list");
 
-if(!greeting || !quoteText || !quoteBtn ||!userInput || !submitBtn){
+if(!greeting || !quoteText || !quoteBtn ||!userInput || !submitBtn || !taskList){
     throw new Error ("Some elements are missing");
 }
 
@@ -35,19 +36,7 @@ timeOfDay()
 
 // using an api to fetch a random quote. 
 
-// fetch("https://api.breakingbadquotes.xyz/v1/quotes")
-// .then(response => {
-//     if(!response.ok){
-//         throw new Error("Could not fetch API");
-//     }
-//     return response.json();
-// })
-// .then(data => randomQuote = (data[0].quote))
-// .catch(error => console.error(error));
-
-
-
-async function fetchApi(){
+const fetchApi = async () =>{
     try{
         const response = await fetch("https://api.breakingbadquotes.xyz/v1/quotes");
      if(!response.ok){
@@ -65,12 +54,36 @@ async function fetchApi(){
     }
 }
 
-// quoteText.innerText = `${data[0].quote} - ${data[0].author}`
-
 fetchApi()
 
+// Function that will add user input as a new task
 
+const addNewTask = () => {
+    const inputtedTask = userInput.value.trim();
 
+    if(inputtedTask === "") return;
+
+    const newTaskDiv = document.createElement("div");
+    newTaskDiv.classList.add("todo-created__task");
+
+    const newTaskCheckbox = document.createElement("input");
+    newTaskCheckbox.type = "checkbox";
+    newTaskCheckbox.classList.add("todo-created__task__checkbox");
+
+    const newTaskText = document.createElement("p");
+    newTaskText.classList.add("todo-created__task__text");
+    newTaskText.innerText = inputtedTask;
+
+    newTaskDiv.appendChild(newTaskCheckbox);
+    newTaskDiv.appendChild(newTaskText);
+
+    taskList.appendChild(newTaskDiv);
+
+    userInput.value = "";
+    // userInput.placeholder = "Type new task here...";
+
+};
 
 // event listener
 quoteBtn.addEventListener("click", fetchApi);
+submitBtn.addEventListener("click", addNewTask);

@@ -3,15 +3,15 @@
 ## A Todo list created using 
 - [x] HTML
 - [x] SCSS (BEM!)
-- [ ] TS
+- [x] TS
 
 
 
 ## Functionality
-- [ ] Add new todos 
+- [x] Add new todos 
 - [ ] Delete (complete) todos
-- [ ] Greeting on the page based on the time of the day (morning, afternoon, evening etc)
-- [ ] Welcome message or random fact (or other) generated from an API call
+- [x] Greeting on the page based on the time of the day (morning, afternoon, evening etc)
+- [x] Welcome message or random fact (or other) generated from an API call
 
  
  ### HTML
@@ -33,8 +33,8 @@
   -  [x] new task button
   - [ ] task deletion
   - [x] new quote generation (with button)
-  - [ ] new image gen based on time of day
-- [ ] function that takes info input into task creation field and will create a new div containing that information
+  - [x] new header text based on time of day
+- [x] function that takes info input into task creation field and will create a new div containing that information
 - [ ] function that will delete and or hide tasks once button has been pressed
 - [x] function that checks time of day on page load
-- [ ] function that calls api to generate new quote on page load / on button press
+- [x] function that calls api to generate new quote on page load / on button press
